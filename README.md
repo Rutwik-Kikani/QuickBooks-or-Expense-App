@@ -4,3 +4,5 @@ Goal of app:
 Ultimate goal of app is to keep records of users daily expenses.
 Project Location:
 Project->QuickBook.
+Report Location:
+Documentation->SDP_Project_Report.
