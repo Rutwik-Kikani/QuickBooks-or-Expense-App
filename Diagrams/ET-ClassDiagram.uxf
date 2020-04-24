@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>420</y>
+      <w>230</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>CategoryItem
+--
+-mCategoryName: string
+-mCategoryImageResourceId: int
+-mCatIndex: int
+--
++getmCategoryName()
++setmCategoryName()
++getmCategoryImageResourceId()
++setmCategoryImageResourceId()
++getCatIndex() 
++setCatIndex()
++toString()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>680</y>
+      <w>230</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>SummaryItem
+--
+-sPercentage: double
+-sCategoryName: string
+--
++getsPercentage()
++setsPercentage()
++getsCategoryName()
++setsCategoryName()
++toString()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>50</y>
+      <w>230</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Expense
+--
+-id: int
+-subName: string
+-categoryName: string
+-amount: int
+-dateAdded: DateTime
+-description: string
+--
++getId()
++setId()
++getSubName()
++setSubName()
++getCategoryName() 
++setCategoryName()
++getAmount() 
++seTAmount
++getDescription() 
++setDescription ()
++toString()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>50</y>
+      <w>230</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>ExpenseDBHandler
+--
+-expense: Expense
+--
++addExpense()
++getAllExpense()
++getExpenseById()
++getByCategoryName()
++updateExpense()
++deleteExpense()
++getCount()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>430</y>
+      <w>230</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>DumCategoryDataServer
+--
++catList: List&lt;CategoryItem&gt;
+--
++getCategoryList()
++getaddToCategoryList()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>680</y>
+      <w>280</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>CategryItemManeger
+--
+-categoryItemmList: List&lt;CategoryItem&gt;
+--
++findCategoryIndex()
++calculateCategoryPercentage()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>420</y>
+      <w>280</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>DateConvet
+--
+-currentCalder :  Calendar
+--
++IndianDateToMillSecond()
++BritishDateToMillSecoud()
++ValidateJavaDate()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>210</y>
+      <w>280</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>ExpenseValidator
+--
+-expense : Expense
+-status: string
+--
++basicValidateExpense()
++ValidateExpenseWithDate()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>500</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>AddExpenseActivity
+--
+-expense: Expense
+-exdbHandler: ExpenseDbHandler
+--
++setUpExpense()
++saveExpenseToDb()
++gotoNextActivity()
+--
+Responsibilities
+-- get refrence of ui component
+-- link ui values to appropriate variable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>190</y>
+      <w>270</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>UpdateExpenseActivity
+--
+-expense: Expense
+-exdbHandler: ExpenseDbHandler
+--
++getExpenseForUpdation
++setUpExpense()
++updateExpenseToDb()
++gotoNextActivity()
+--
+Responsibilities
+-- get refrence of ui component
+-- link ui values to appropriate variable</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>370</y>
+      <w>300</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>DetailsExpenseActivity
+--
+-expense: Expense
+-exdbHandler: ExpenseDbHandler
+--
++sendExpenseForUpdation
++getExpenseById()
++DeleteExpense()
++gotoNextActivity()
+--
+Responsibilities
+-- get refrence of ui component
+-- link ui values to appropriate variable
+-- Deletion of expense will done by this activity
+-- send Expense for Updation</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>60</y>
+      <w>300</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>ListExpenseActivity
+--
+-expenselist: List&lt;Expense&gt;
+-exdbHandler: ExpenseDbHandler
+--
++sendExpenseForUpdation
++getAllExpense()
++DeleteExpense()
++gotoNextActivity()
++saveAsPdf()
++showAllExpense()
+--
+Responsibilities
+-- get refrence of ui component
+-- link ui values to appropriate variable
+-- Deletion of expense will done by this activity
+-- send Expense for Updation</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>710</y>
+      <w>300</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>SummaryActivity
+--
+-expenselist: List&lt;Expense&gt;
+-catlist : List&lt;CategoryList&gt;
+-exdbHandler: ExpenseDbHandler
+-summaryList: List&lt;SummaryItem&gt;
+--
++getAllExpense()
++getAllCategory()
++FormSummaryList()
+--
+Responsibilities
+-- get refrence of ui component
+-- link ui values to appropriate variable
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>140</y>
+      <w>520</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>490</y>
+      <w>520</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;60.0;30.0;60.0;110.0;470.0;110.0;470.0;10.0;500.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>490</y>
+      <w>200</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;160.0;180.0;160.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>140</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;40.0;130.0;40.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>190</y>
+      <w>150</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0;60.0;250.0;130.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>730</y>
+      <w>470</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>450.0;70.0;10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>70</y>
+      <w>160</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>140.0;120.0;140.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>10</y>
+      <w>1400</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1380.0;50.0;1380.0;10.0;90.0;10.0;90.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1230</x>
+      <y>10</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>610</y>
+      <w>1360</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1340.0;290.0;10.0;290.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>150</y>
+      <w>150</w>
+      <h>490</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;470.0;50.0;470.0;50.0;210.0;10.0;210.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>420</y>
+      <w>470</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>450.0;350.0;60.0;350.0;10.0;200.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1370</x>
+      <y>10</y>
+      <w>50</w>
+      <h>570</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;550.0;30.0;550.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1390</x>
+      <y>370</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>1700</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>1680.0;60.0;1680.0;10.0;10.0;10.0;10.0;390.0;320.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>1010</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+DBHelperClasses
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>1010</y>
+      <w>280</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+ModelManagerClasses
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>1010</y>
+      <w>230</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+ModelClasses
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>1010</y>
+      <w>620</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lw=2
+UiHandlerClasses
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>990</y>
+      <w>1740</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lw=3
+
+
+
+
+Class Diagram
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

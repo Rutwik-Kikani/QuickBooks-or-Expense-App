@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardViewId"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/cardRelativeLayoutId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/dCatNameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Category Name"
+                android:textColor="@android:color/holo_purple"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/dDateAddedId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dSubNameId"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="8dp"
+                android:text="Date"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/dSubNameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dCatNameId"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="8dp"
+                android:text="Subject"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/dDescriptionId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dDateAddedId"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="8dp"
+                android:text="Subject"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dAmountId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dCatNameId"
+                android:layout_alignBottom="@id/dDescriptionId"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:text="Amount"
+                android:textSize="18sp" />
+            <TableRow
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/dAmountId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button android:id="@+id/dEditButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@android:drawable/ic_menu_edit"/>
+
+                <Button
+                    android:id="@+id/dDeleteButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@android:drawable/ic_menu_delete"/>
+
+            </TableRow>
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
