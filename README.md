@@ -1,4 +1,4 @@
-# SDP_Project
+# SDP_Project - QuickBooks/Expense App
 Expense tracker app base on android development and also report is included.
 Goal of app: 
 Ultimate goal of app is to keep records of users daily expenses.
