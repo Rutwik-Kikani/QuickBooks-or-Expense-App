@@ -7,7 +7,7 @@ Project->QuickBooks.
 Report Location:
 Documentation->Final Report.
 
-![Image](https://imgur.com/bI3d4UK)   
+[img]https://i.imgur.com/bI3d4UK.jpg[/img]
 ![Image](https://imgur.com/KqJaEN0)   
 ![Image](https://imgur.com/qJk9fvK)   
 ![Image](https://imgur.com/TAsj2aY)
